@@ -4,15 +4,139 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
-    <script src="./assets/js/script.js"></script>
+    <script type="module" src="./assets/js/script.js" defer></script>
     <title>Country ISO Converter</title>
   </head>
 
   <body>
-    <header></header>
+    <header>
+      <h1 class="title">Country ISO Converter</h1>
+      <p class="subtitle">
+        Convert ISO country codes to Country names and vice versa.
+      </p>
+    </header>
 
-    <main class="container"></main>
+    <main class="container">
+      <section class="card">
+        <section class="info-banner">
+          <p class="info-banner__title">How to use this tool</p>
+          <ul class="info-banner__list">
+            <li>
+              Paste or type the country names or code list items into the INPUT
+              list text area separated by new-line.
+            </li>
+            <li>
+              Pick the options required and click on the [Convert Country List]
+              button.
+            </li>
+            <li>The results will appear in the RESULT list text area.</li>
+          </ul>
+        </section>
 
-    <footer></footer>
+        <label for="iso_input" class="input-label">ISO code INPUT list</label>
+
+        <textarea
+          id="iso_code_input"
+          autocomplete="off"
+          class="iso-code-input"
+          type="text"
+          rows="4"
+          aria-invalid="false"
+          aria-multiline="true"
+        ></textarea>
+        <p id="input_error_message" class="error"></p>
+
+        <section class="options">
+          <!-- <div class="options__item">
+            <input
+              type="checkbox"
+              id="iso_to_country"
+              name="iso_to_country"
+              value="iso_to_country"
+              checked
+            />
+            <label for="iso_to_country">ISO to Country</label>
+          </div>
+
+          <div class="options__item">
+            <input
+              type="checkbox"
+              id="country_to_iso"
+              name="country_to_iso"
+              value="country_to_iso"
+            />
+            <label for="country_to_iso">Country to ISO</label>
+          </div>
+
+          <div class="options__item">
+            <input
+              type="checkbox"
+              id="iso_to_country_code"
+              name="iso_to_country_code"
+              value="iso_to_country_code"
+            />
+            <label for="iso_to_country_code">ISO to Country Code</label>
+          </div> -->
+
+          <div class="options__button-group">
+            <button id="convert_btn" class="options__button" type="button">
+              Convert Country List
+            </button>
+            <button
+              id="copy_to_clipboard"
+              class="options__button outline"
+              type="button"
+            >
+              Copy to Clipboard
+            </button>
+            <button id="clear_btn" class="options__button clear" type="button">
+              Clear
+            </button>
+          </div>
+        </section>
+
+        <label for="country_output" class="input-label"
+          >Country name RESULT list</label
+        >
+
+        <textarea
+          id="country_output"
+          autocomplete="off"
+          class="iso-code-input"
+          type="text"
+          rows="4"
+          aria-invalid="false"
+          aria-multiline="true"
+          placeholder="Result will appear here..."
+        ></textarea>
+        <p id="output_error_message" class="error"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p class="footer-text">
+        Made with <span class="heart">❤</span> by
+        <a href="https://github.com/KhalidSaifullahFuad" target="_blank"
+          >KhalidSaifullahFuad</a
+        >
+      </p>
+
+      <p class="footer-text">
+        This project built for
+        <a
+          href="https://www.awesomescreenshot.com/video/20188965?key=7ba500873c3cfaae43009d12e9d26b55"
+          target="_blank"
+          >Hastech Javascript challenge</a
+        >
+      </p>
+
+      <p class="footer-text">
+        <a
+          href="https://github.com/KhalidSaifullahFuad/country-iso-converter"
+          target="_blank"
+          >Github</a
+        >
+      </p>
+    </footer>
   </body>
 </html>
