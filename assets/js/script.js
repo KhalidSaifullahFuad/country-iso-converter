@@ -20,13 +20,11 @@ function setOutputError(message) {
 
 function formatInput(isoCode) {
   const countryCodeList = isoCode.split("\n");
-  const formattedCountryCode = countryCodeList.filter((countryCode) => {
-    if (countryCode.length === 0) return false;
-    else if (countryCode.length > 2 || countryCode.length < 2) {
+  const formattedCountryCode = countryCodeList.map((countryCode) => {
+    if (countryCode.length > 2 || countryCode.length < 2) {
       setInputError("Country code should be 2 characters long");
-      return false;
     }
-    return countryCode.trim().toUpperCase();
+    return countryCode.toUpperCase().trim();
   });
 
   return formattedCountryCode;
@@ -70,9 +68,10 @@ function deduplicateCountryList(countryList) {
 
   return updatedCountryList;
 }
+``;
 
 window.addEventListener("load", () => {
-  isoCodeInput.placeholder = "Example Country Codes:\nUS\nBN\nUK";
+  isoCodeInput.placeholder = "Example Country Codes:\nUS\nGB\nBD";
 });
 
 isoCodeInput.addEventListener("input", () => {
